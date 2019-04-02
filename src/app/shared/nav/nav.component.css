@@ -1,0 +1,50 @@
+.logo {
+  width: 70px;
+  height: 65px;
+  padding-top: 4px;
+  padding-bottom: 9px;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-color: rgb(240, 240, 240);
+}
+
+.nav-item {
+  color: rgb(90, 5, 65);
+}
+
+.navbar-nav1 {
+  padding-left: 950px;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 120px;
+    height: 25px;
+  }
+
+  .navbar-nav {
+    padding-left: 140px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  .navbar-nav {
+    padding-left: 1060px;
+  }
+}
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.bg-light {
+  background-color: #f5f5f5 !important;
+}
+
+/* .navbar-nav{
+    padding-left: 420px;
+} */         
