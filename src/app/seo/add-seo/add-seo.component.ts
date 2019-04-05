@@ -8,7 +8,7 @@ import { SeoService } from './../seo.service';
 })
 export class AddSeoComponent implements OnInit {
 
-  constructor(private seoService: SeoService) { 
+  constructor(private seoService: SeoService) {
     this.seoService.metaTagDescription();
   }
 

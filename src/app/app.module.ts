@@ -17,6 +17,7 @@ import {NavComponent} from './shared/nav/nav.component';
 import {SharedModule} from './shared/shared.module';
 import {FooterComponent} from './shared/footer/footer.component';
 import { from } from 'rxjs';
+import { ProductRoutingModule } from './product/product-routing.module';
 
 
 
@@ -36,12 +37,11 @@ import { from } from 'rxjs';
     ReactiveFormsModule,
     MatCardModule,
     SharedModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
   ],
   providers: [SeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
   }
 

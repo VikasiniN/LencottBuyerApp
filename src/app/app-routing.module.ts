@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'shared',
     loadChildren: './shared/shared.module#SharedModule'
+  },
+  {
+    path: 'product',
+    loadChildren: './product/product.module#ProductModule'
   }
 ];
 
