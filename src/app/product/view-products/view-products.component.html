@@ -120,18 +120,25 @@
               <div >
                   <p class="card-text"> {{ product.color }}</p>
                 </div>
-                <div >
+               <!--  <div >
                   <p class="card-text"> {{ product.material }}</p>
                 </div>
                 <div >
                   <p class="card-text"> {{ product.occassion }}</p>
-                </div>
+                </div> -->
             </div>
             <div class="card-footer">
               <button class="btn btn- float-right">Add to Cart</button>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="page-na">
+        <mat-paginator #paginator [pageSize]="pageSize" [hidePageSize]="true" [pageSizeOptions]="[10, 100, 150]"
+          [showFirstLastButtons]="true" [length]="totalSize" [pageIndex]="currentPage" (page)="handlePage($event)"
+          class="paginator">
+        </mat-paginator>
       </div>
     </div>
   </div>

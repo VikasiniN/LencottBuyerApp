@@ -35,9 +35,10 @@ import {
   MatTabsModule,
   MatSliderModule
 } from '@angular/material';
+import { ViewSingleProductComponent } from './view-single-product/view-single-product.component';
 
 @NgModule({
-  declarations: [ViewProductsComponent],
+  declarations: [ViewProductsComponent, ViewSingleProductComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,

@@ -41,4 +41,13 @@ export class ProductService {
     const url: string = this.serviceUrl + categoryUrl + id;
     return this.httpClient.put<Product>(url, data);
   }
+
+  // view single product
+
+  getSingleProducts(id): Observable<any> {
+    const categoryUrl = 'singleproduct/';
+    const url: string = this.serviceUrl + categoryUrl + id;
+    return this.httpClient.get<Product>(url);
+  }
+
 }

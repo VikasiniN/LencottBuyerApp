@@ -55,6 +55,11 @@ export class ViewProductsComponent implements OnInit {
 viewAllProducts() {
 this.productService.getAllProducts().subscribe(data => {
   this.productModel = data;
+  this.productModel.paginator = this.paginator;
+  this.productModel = data;
+  this.array = data;
+  this.totalSize = this.array.length;
+  this.iterator();
   this.getFilterMenu();
 }, err => {
   console.log(err);
@@ -89,7 +94,21 @@ lowToHigh() {
     return a.sp - b.sp;
   });
 }
-
+public handlePage(e: any) {
+  console.log('paginator', e);
+  this.currentPage = e.pageIndex;
+  this.pageSize = e.pageSize;
+  this.iterator();
+}
+private iterator() {
+  const end = (this.currentPage + 1) * this.pageSize;
+  const start = this.currentPage * this.pageSize;
+  const part = this.array.slice(start, end);
+  this.productModel = part;
+}
+viewSingleProduct(id) {
+  this.router.navigate(['/product/productdetail', id]);
+}
 // filter only Price
 showPriceOptions(e, i) {
   if (e.checked === true) {
@@ -126,7 +145,7 @@ showPriceOptions(e, i) {
       this.productModel.paginator = this.paginator;
       this.array = data;
       this.totalSize = this.array.length;
-     /*  this.iterator(); */
+      this.iterator();
     }, err => {
       console.log(err);
     });
@@ -166,7 +185,7 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.array = data;
         this.totalSize = this.array.length;
-      /*   this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -195,7 +214,7 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.array = data;
         this.totalSize = this.array.length;
-    /*     this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -224,7 +243,7 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.array = data;
         this.totalSize = this.array.length;
-    /*     this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -254,7 +273,7 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.array = data;
         this.totalSize = this.array.length;
-        /* this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -298,9 +317,9 @@ showPriceOptions(e, i) {
       this.productModel = data;
       this.productModel.paginator = this.paginator;
       this.productModel = data;
-    /*   this.array = data;
+      this.array = data;
       this.totalSize = this.array.length;
-      this.iterator(); */
+      this.iterator();
     }, err => {
       console.log(err);
     });
@@ -350,9 +369,9 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-       /*  this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -380,9 +399,9 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-        /* this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -411,9 +430,9 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-      /*   this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -441,9 +460,9 @@ showPriceOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-        /* this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -490,9 +509,9 @@ showMaterialOptions(e, i) {
       this.productModel = data;
       this.productModel.paginator = this.paginator;
       this.productModel = data;
-     /*  this.array = data;
+      this.array = data;
       this.totalSize = this.array.length;
-      this.iterator(); */
+      this.iterator();
     }, err => {
       console.log(err);
     });
@@ -537,9 +556,9 @@ showMaterialOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-       /*  this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -570,9 +589,9 @@ showMaterialOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-       /*  this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -605,9 +624,9 @@ showMaterialOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-       /*  this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -653,9 +672,9 @@ showOccasionOptions(e, i) {
       this.productModel = data;
       this.productModel.paginator = this.paginator;
       this.productModel = data;
-     /*  this.array = data;
+      this.array = data;
       this.totalSize = this.array.length;
-      this.iterator(); */
+      this.iterator();
     }, err => {
       console.log(err);
     });
@@ -700,9 +719,9 @@ showOccasionOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-       /*  this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -733,9 +752,9 @@ showOccasionOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-       /*  this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
@@ -762,9 +781,9 @@ showOccasionOptions(e, i) {
       this.productModel = data;
       this.productModel.paginator = this.paginator;
       this.productModel = data;
-     /*  this.array = data;
+      this.array = data;
       this.totalSize = this.array.length;
-      this.iterator(); */
+      this.iterator();
     }, err => {
       console.log(err);
     });
@@ -797,9 +816,9 @@ showOccasionOptions(e, i) {
         this.productModel = data;
         this.productModel.paginator = this.paginator;
         this.productModel = data;
-       /*  this.array = data;
+        this.array = data;
         this.totalSize = this.array.length;
-        this.iterator(); */
+        this.iterator();
       }, err => {
         console.log(err);
       });
